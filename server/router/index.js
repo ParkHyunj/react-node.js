@@ -5,4 +5,25 @@ router.get('/', (req, res) => {
     res.send({data : 'i am 3010 port'});
 })
 
+// '/' : 요청받는 경로 | req : 요청받을때 보낸 정보들, parameter가 들어있음. 
+router.post('/', (req, res) => {
+    let numberParams = req.body.number;
+
+    // 원하는 로직을 수행하면됨
+    console.log(numberParams);
+
+    let resultNumber = numberParams * 2;
+
+    res.send(
+        {
+            result : resultNumber,
+            oriNumber : numberParams
+        }
+    );
+
+    // console.log(req);               // client(web page)에서의 요청 전체 | requset header 부터 body 까지
+    // console.log(req.body);          // client(web page)에서 보낸 데이터(parameter) | parameter 전체
+    // console.log(req.body.number);   // client(web page)에서 보낸 데이터(parameter) 중에서 number 이름을 갖는 값 | 518
+});
+
 module.exports = router;
