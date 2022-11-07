@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 })
 
 // '/' : 요청받는 경로 | req : 요청받을때 보낸 정보들, parameter가 들어있음. 
-router.post('/', (req, res) => {
+router.post('/', (req, res) => {  //post방식은 body안에 들어가서 이동하므로 body parser가 필요
     let numberParams = req.body.number;
 
     // 원하는 로직을 수행하면됨
