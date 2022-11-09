@@ -12,7 +12,10 @@ router.post('/', (req, res) => {  //post방식은 body안에 들어가서 이동
     // 원하는 로직을 수행하면됨
     console.log(numberParams);
 
-    let resultNumber = numberParams * 2;
+    let resultNumber = numberParams * 10;   
+    //nodemon으로 nodemon ./server/server.js하면 node 서버도 변경된 내용에 대해서 새로 
+    //서버를 시작하지 않고 저장 후 새로고침만으로 변경된 내용이 적용됩니다.
+    //react는 이미 auto-reload이므로 노드서버만 신경쓰기
 
     res.send(
         {
